@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#This file controls how my local machine connects to my remote server
+
+Host 6909-web-01
+    HostName 44.202.19.71
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
