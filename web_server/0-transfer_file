@@ -14,4 +14,5 @@ USERNAME="$3"
 PATH_TO_SSH_KEY="$4"
 
 #Transfering the file with scp and strict key host disabled
-scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "PATH_TO_FILE" "USERNAME@$IP:~/"
+scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP:~/"
+
