@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Converter</title>
+        <style>
+            body {
+                background-color: #f0f4f8;
+                margin: 0;
+                padding: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .currency-converter {
+                background-color: #9ba0aa;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                width: 300px;
+                text-align: center;
+            }
+
+            .currency-converter h3 {
+                color: #2c3e50;
+                margin-bottom: 20px;
+            }
+
+            .group {
+                margin-bottom: 15px;
+                text-align: left;
+            }
+
+            .group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #34495e;
+            }
+
+            .group select,
+            .group input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+
+            button {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s;
+            }
+
+            button:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="currency-converter">
+            <h3>Currency Converter</h3>
+            <div class="group">
+                <label for="from">From:</label>
+                <select id="from">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="RUB">RUB</option>
+                  <option value="JPY">JPY</option>
+                  <option value="GHS">GHS</option>
+                </select>
+            </div>
+            <div class="group">
+                <label for="to">To:</label>
+                <select id="to">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="RUB">RUB</option>
+                    <option value="JPY">JPY</option>
+                    <option value="GHS">GHS</option>
+                </select>
+            </div>
+            <div class="group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+            <button onclick="convert()">Convert</button>
+        </div>
+    </body>
+    <script src="currency.js"></script>
+</html>
