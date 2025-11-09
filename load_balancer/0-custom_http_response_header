@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Configures Nginx with a custom HTTP response header
+
+# Update package list and install nginx
+apt-get update -y
+apt-get install nginx -y
+
+# Create a simple HTML page
+echo "Holberton School for the win!" > /var/www/html/index.html
+
+# Add custom header with hostname to Nginx config
+# shellcheck disable=SC2154
+sed -i "/listen 80 default_server;/a \\tadd_header X-Served-By \$hostname;" /etc/nginx/sites-available/default
+
+# Restart nginx service
+service nginx restart
