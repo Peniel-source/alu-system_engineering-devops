@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Fix the server to run Apache and serve "Hello Holberton" on the root page.
+
+apt-get update -y
+apt-get install -y apache2
+
+echo "Hello Holberton" > /var/www/html/index.html
+
+service apache2 start
