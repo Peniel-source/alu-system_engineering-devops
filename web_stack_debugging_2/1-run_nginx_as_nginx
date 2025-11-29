@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Script that configures Nginx to run as nginx user on port 8080
+
+# Update nginx.conf to run as nginx user
+sed -i 's/user www-data;/user nginx;/' /etc/nginx/nginx.conf
+
+# Update default site to listen on port 8080
+sed -i 's/listen 80 default_server;/listen 8080 default_server;/' /etc/nginx/sites-available/default
+sed -i 's/listen \[::\]:80 default_server;/listen [::]:8080 default_server;/' /etc/nginx/sites-available/default
+
+# Make nginx user owner of nginx process
+chown nginx:nginx /var/log/nginx/access.log
+chown nginx:nginx /var/log/nginx/error.log
+
+# Kill any running nginx processes
+pkill -9 nginx
+
+# Start nginx as nginx user
+su - nginx -s /bin/bash -c "/usr/sbin/nginx"
