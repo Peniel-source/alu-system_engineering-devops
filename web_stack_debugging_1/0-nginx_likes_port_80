@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fixes Nginx so that it listens on port 80.
+
+service nginx restart
